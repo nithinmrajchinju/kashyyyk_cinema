@@ -1,0 +1,47 @@
+.movie-card{
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+    height: 10rem;
+    padding-right: 1rem;
+    margin: 1rem;
+    background-color: #0d1f2d;
+    border-radius: 0.5rem;
+}
+.movie-poster{
+    border-radius: 0.5rem;
+}
+.movie-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    margin: 1rem 0rem;
+    color: white;
+}
+.movie-title{
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    text-wrap: pretty;
+}
+.movie-director-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie-director{
+    font-size: 1rem;
+}
+.movie-imdb-length-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.movie-imdb-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.movie-length-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
