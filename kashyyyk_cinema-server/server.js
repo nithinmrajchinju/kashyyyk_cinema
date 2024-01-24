@@ -4,6 +4,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const authenticate = require('./config/auth');
 const Movie = require('./models/Movie');
+const { lowerCase } = require('lodash');
 const app = express();
 const port = process.env.PORT || 9000;
 
@@ -46,11 +47,12 @@ app.get('/movies/bygenre', authenticate, async (req, res) => {
 app.get('/movies/:movieTitle', authenticate, async (req, res) => {
     try {
         const movieTitle = req.params.movieTitle
+        console.log("lowerCase(movieTitle) :", lowerCase(movieTitle))
         const movies = await Movie.find();
         let moviesSearchList = []
 
         movies.forEach(movie => {
-            if (movie.title === movieTitle)
+            if (lowerCase(movie.title).includes(lowerCase(movieTitle)))
                 moviesSearchList.push({
                     director: movie.director,
                     imdb_rating: movie.imdb_rating,
